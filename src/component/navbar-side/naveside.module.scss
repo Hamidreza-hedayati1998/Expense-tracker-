@@ -1,0 +1,44 @@
+.container{
+    padding: 20px;
+    color: white;
+    height: 100vh;
+    .list{
+        display: flex;
+        flex-direction: column;
+        li{
+            list-style: none;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            span{
+                color: #161dd3;
+                padding: 10px;
+                border-radius: 8px;
+                background-color: #455A64;
+                margin: 0px 10px;
+            }
+        }
+    }
+  h1{
+    text-align: center;
+  }
+}
+.listPage{
+    display: flex;
+        flex-direction: column;
+        li{
+            list-style: none;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            
+            span{
+                color: #161dd3;
+                padding: 10px;
+                border-radius: 8px;
+                background-color: #455A64;
+                margin: 0px 10px;
+            }
+        }
+    
+}

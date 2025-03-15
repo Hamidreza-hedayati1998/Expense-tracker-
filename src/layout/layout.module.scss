@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+   
+    color: #fff;
+  background: rgb(15, 12, 33);
+  background: linear-gradient(
+    171deg,
+    rgba(15, 12, 33, 1) 10%,
+    rgba(15, 12, 33, 1) 40%,
+    rgba(27, 22, 96, 1) 65%,
+    rgba(40, 33, 167, 1) 92%
+  );
+  display: flex;
+  
+  background-repeat:no-repeat;
+  .menuwrap{
+    width: 17%;
+    min-width: 250px;
+    height: 600px;
+    overflow-y: scroll;
+  }
+  
+}
+
+.mainrwrap{
+    width: 100%;
+    
+}
+.Card{
+  width: 400px;
+  
+}
+
