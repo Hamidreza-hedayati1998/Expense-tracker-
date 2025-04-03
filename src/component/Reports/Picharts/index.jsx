@@ -1,12 +1,13 @@
 import React from 'react';
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
 
-const COLORS = ['#F44336', '#43A047', '#29B6F6', '#F4511E'];
+const COLORS = ['#087a11', '#94931d', '#e40808', '#d800e6','#46ffcf','#ffe67b'];
 
 const PiCharts = ({ data, totalValue }) => {
   return (
     <div>
       <PieChart width={400} height={400} >
+        
         <Pie
           data={data}
           cx="50%"
