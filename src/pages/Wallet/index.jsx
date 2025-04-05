@@ -3,9 +3,27 @@ import CustomInput from '../../component/inputcustum';
 
 const Wallet = () => {
     const [inputAmount, setInputAmount] = useState('');
-    const [deposits, setDeposits] = useState([]);
-    const [currentBalance, setCurrentBalance] = useState(0);
-    const [expenses, setExpenses] = useState([]);
+    const [deposits, setDeposits] = useState(()=>{
+        try {
+            return JSON.parse(localStorage.getItem('walletDeposits')) || [];
+        } catch {
+            return [];
+        }
+    });
+    const [currentBalance, setCurrentBalance] = useState(()=>{
+        try {
+            return JSON.parse(localStorage.getItem('walletBalance')) || 0;
+        } catch {
+            return [];
+        }
+    });
+    const [expenses, setExpenses] = useState(()=>{
+        try {
+            return JSON.parse(localStorage.getItem('walletExpenses')) || [];
+        } catch {
+            return [];
+        }
+    });
    
     useEffect(() => {
         const loadWalletData = () => {
@@ -13,7 +31,8 @@ const Wallet = () => {
                 const balance = localStorage.getItem('walletBalance');
                 const deps = localStorage.getItem('walletDeposits');
                 const exps = localStorage.getItem('walletExpenses');
-                
+               
+               
                 if (balance) setCurrentBalance(parseFloat(balance));
                 if (deps) setDeposits(JSON.parse(deps));
                 if (exps) setExpenses(JSON.parse(exps));
@@ -73,7 +92,7 @@ const Wallet = () => {
         setInputAmount('');
         localStorage.setItem('walletBalance', updatedBalance.toString());
         localStorage.setItem('walletDeposits', JSON.stringify(updatedDeposits));
-        const allTransactions = [...updatedDeposits, ...expenses];
+        const allTransactions = [...deposits, ...expenses];
         localStorage.setItem('walletTransactions', JSON.stringify(allTransactions));
     };
 
@@ -123,13 +142,14 @@ const Wallet = () => {
                                         {allTransactions.map((transaction) => (
                                             <li key={transaction.id} className='p-3 hover:bg-gray-50'>
                                                 <div className='flex justify-between items-center'>
-                                                    <div>
+                                                    <div className='flex items-center'>
+                                                    
                                                         <p className={`font-medium ${transaction.type === 'deposit' ?
                                                              'text-green-600' : 'text-red-600'}`}>
-                                                            {transaction.type === 'deposit' ? '+' : '-'}{transaction.amount}$
+                                                            {transaction.type === 'deposit' ? `+${transaction.amount}$` : `-${transaction.value}$`}
                                                         </p>
                                                         {transaction.title && (
-                                                            <p className='text-sm text-red-600'>{transaction.title}</p>
+                                                            <p className='text-xs  text-red-600'>({transaction.title})</p>
                                                         )}
                                                     </div>
                                                     <p className='text-sm text-gray-600'>

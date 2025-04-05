@@ -170,7 +170,7 @@ const HomePage = () => {
                 
                 <div className={styles['card-container']}>
                     <Card>
-                        <h2 className={`${styles['text-lg']} ${styles['font-bold']} ${styles['mb-4']}`}>
+                        <h2 className={` ${styles['text-lg']} ${styles['font-bold']} ${styles['mb-4']}`}>
                             Add Expense
                         </h2>
                         <CustomSelected 
@@ -184,6 +184,7 @@ const HomePage = () => {
                             label4='Other'
                             value={selectedcategory} 
                             onChange={handleSelectChange}
+                            
                         />
                         {showCustomInput && (
                             <CustomInput 
@@ -227,12 +228,12 @@ const HomePage = () => {
                                     <li key={transaction.id} className={styles['transaction-item']}>
                                         <div className={styles['transaction-content']}>
                                             <div className={styles['transaction-title']}>
-                                                {transaction.selectedcategory === "food" && <FaUtensils className={styles['transaction-category-icon']} />}
-                                                {transaction.selectedcategory === "university" && <FaUniversity className={styles['transaction-category-icon']} />}
-                                                {transaction.selectedcategory === "travel" && <MdTravelExplore className={styles['transaction-category-icon']} />}
+                                                {transaction.selectedcategory === "food" && <FaUtensils  className={styles['transaction-category-icon']} />}
+                                                {transaction.selectedcategory === "university" && <FaUniversity  className={styles['transaction-category-icon']} />}
+                                                {transaction.selectedcategory === "travel" && <MdTravelExplore size={36} className={styles['transaction-category-icon']} />}
                                                 <strong>{transaction.title}</strong>
                                                 <span className={styles['transaction-amount']}>
-                                                    ${transaction.value}
+                                                    {transaction.value}
                                                     <AiOutlineDollar className={styles['text-green']} />
                                                 </span>
                                             </div>
