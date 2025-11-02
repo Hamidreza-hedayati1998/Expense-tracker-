@@ -6,7 +6,7 @@ import CustomInput from '../../component/inputcustum';
 import Buttoncustom from '../../component/Buttoncustum';
 import PiCharts from '../../component/Reports/Picharts';
 import CustomSelected from '../../component/customSeleted';
-import { IoMdClose } from "react-icons/io";
+import { IoMdCloseCircle } from "react-icons/io";
 import { MdTravelExplore } from "react-icons/md";
 import { AiOutlineDollar } from "react-icons/ai";
 import { FaUtensils, FaUniversity } from 'react-icons/fa';
@@ -245,7 +245,7 @@ const HomePage = () => {
                                             onClick={() => removeTransaction(transaction.id)}
                                             className={styles['text-red']}
                                         >
-                                            <IoMdClose />
+                                            <IoMdCloseCircle />
                                         </button>
                                     </li>
                                 ))}
