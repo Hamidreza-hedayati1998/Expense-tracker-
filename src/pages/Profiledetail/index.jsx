@@ -5,7 +5,7 @@ const Profiledetail = () => {
 
     return (
       <div>
-        
+        profiledetail
       </div>
      );
   }
