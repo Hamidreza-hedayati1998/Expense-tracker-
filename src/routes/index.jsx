@@ -3,7 +3,7 @@ import Layout from '../layout';
 import HomePage from '../pages/Home';
 import Login from '../pages/Login';
 import Signup from '../pages/Singup';
-import Profiledetail from "../pages/ProfileDetail";
+import Profiledetail from "../pages/Profiledetail";
 import Wallet from "../pages/Wallet";
 
 
